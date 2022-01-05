@@ -320,7 +320,9 @@ const app = {
                             _this.songs['love'].splice(indexTrace ,1)
                             _this.render()
                             _this.setConfigLove(_this.songs['love'])
-                            alert(`bạn đã xóa bài hát đã chọn khỏi mục yêu thích`)    
+                            alert(`bạn đã xóa bài hát đã chọn khỏi mục yêu thích`)   
+                            addLoveSong.classList.remove('add-love-active')
+                            overlay.classList.remove('add-overlay-active') 
                         }
                         //xóa bài hát
                     } else {
@@ -344,6 +346,8 @@ const app = {
                                 alert('Bài hát này đã có trong mục yêu thích')
                             }
                             console.log(_this.songs['love'])
+                            addLoveSong.classList.remove('add-love-active')
+                            overlay.classList.remove('add-overlay-active') 
                             
     
                         }
@@ -438,6 +442,7 @@ const app = {
         }
         if(this.configLove.length > 0)  {
             this.songs['love'] = this.songs['love'].concat(this.configLove)
+            console.log(this.songs['love'])
 
         }
         console.log(this.configLove.length)
